@@ -1,24 +1,37 @@
 \documentclass{thesis.cs.pub.ro}
+\makeindex
 \begin{document}
 
 \input{src/global}
-\maketitle
 
-\input{src/base/contents}
+\begin{frontmatter} % roman numbering
+
+%\maketitle
+\input{src/base/titlepage.ro}
+\input{src/base/titlepage.en}
+
+\begin{acknowledgements}
+\input{src/base/acknowledgements}
+\end{acknowledgements}
 
 \begin{abstract}
 \input{src/base/abstract}
 \end{abstract}
 
-\enableparagraphspacing
+\input{src/base/contents}
+
+\printabbrev
+
+\end{frontmatter} % end roman numbering
+
 \input{src/main}
 
 \appendix
 \input{src/appendix/index}
 
-\begin{singlespace}
 \bibliography{src/main}
 \bibliographystyle{plain}
-\end{singlespace}
+
+\printindex
 
 \end{document}

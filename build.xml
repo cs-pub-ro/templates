@@ -20,10 +20,20 @@
 		<exec executable="bibtex">
 			<arg value="thesis"/>
 		</exec>
+		<exec executable="makeindex">
+			<arg value="thesis.nlo"/>
+			<arg value="-s"/>
+			<arg value="nomencl.ist"/>
+			<arg value="-o"/>
+			<arg value="thesis.nls"/>
+		</exec>
 		<exec executable="pdflatex">
 			<arg value="-interaction=scrollmode"/>
 			<arg value="--src-specials"/>
 			<arg value="thesis"/>
+		</exec>
+		<exec executable="makeindex">
+			<arg value="thesis.idx"/>
 		</exec>
 		<exec executable="pdflatex">
 			<arg value="-interaction=scrollmode"/>
@@ -38,13 +48,21 @@
 			<arg value="thesis.pdf"/>
 		</exec>
 	</target>
-	
+
+	<target name="mac-preview" description="preview thesis">
+		<exec executable="/Applications/Preview.app/Contents/MacOS/Preview">
+			<arg value="thesis.pdf"/>
+		</exec>
+	</target>
+
 	<target name="build-clean">
 		<delete dir="." includes="**/*.log,**/*.lot,**/*.lof,**/*.blg,**/*.bbl,**/*.out,**/*.toc,**/*.aux" />
+		<delete dir="." includes="thesis.idx,thesis.ilg,thesis.ind" />
+		<delete dir="." includes="thesis.nlo,thesis.nls" />
 	</target>
 	
 	<target name="clean" depends="build-clean">
-		<delete dir="." includes="**/*.pdf" />
+		<delete dir="." includes="thesis.pdf" />
 	</target>
 	
 </project>

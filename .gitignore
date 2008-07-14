@@ -12,5 +12,9 @@
 *.toc
 *.aux
 
-*.pdf
+thesis.idx
+thesis.ilg
+thesis.ind
+
+thesis.pdf
 

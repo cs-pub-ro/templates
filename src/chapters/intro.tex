@@ -1,0 +1,84 @@
+\chapter{Introduction}
+\label{chapter:intro}
+
+\textbf{This is just a demo file. It should not be used as a sample for a thesis.}\\
+\todo{Remove this line (this is a TODO)}
+
+\section{Project Description}
+\label{sec:proj}
+
+\subsection{Project Scope}
+\label{sub-sec:proj-scope}
+
+This thesis presents the \textbf{\project}.
+
+This is an example of a footnote \footnote{\url{www.google.com}}. You can see here a reference to \labelindexref{Section}{sub-sec:proj-objectives}.
+
+Here we have defined the CS abbreviation.\abbrev{CS}{Computer Science} and the UPB abbreviation.\abbrev{UPB}{University Politehnica of Bucharest}
+
+The main scope of this project is to qualify xLuna for use in critical systems.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam lectus vel orci malesuada accumsan. Sed lacinia egestas tortor, eget tristiqu dolor congue sit amet. Curabitur ut nisl a nisi consequat mollis sit amet quis nisl. Vestibulum hendrerit velit at odio sodales pretium. Nam quis tortor sed ante varius sodales. Etiam lacus arcu, placerat sed laoreet a, facilisis sed nunc. Nam gravida fringilla ligula, eu congue lorem feugiat eu.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam lectus vel orci malesuada accumsan. Sed lacinia egestas tortor, eget tristiqu dolor congue sit amet. Curabitur ut nisl a nisi consequat mollis sit amet quis nisl. Vestibulum hendrerit velit at odio sodales pretium. Nam quis tortor sed ante varius sodales. Etiam lacus arcu, placerat sed laoreet a, facilisis sed nunc. Nam gravida fringilla ligula, eu congue lorem feugiat eu.
+
+
+\subsection{Project Objectives}
+\label{sub-sec:proj-objectives}
+
+We have now included \labelindexref{Figure}{img:report-framework}.
+
+\fig[scale=0.5]{src/img/reporting-framework.pdf}{img:report-framework}{Reporting Framework}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam lectus vel orci malesuada accumsan. Sed lacinia egestas tortor, eget tristiqu dolor congue sit amet. Curabitur ut nisl a nisi consequat mollis sit amet quis nisl. Vestibulum hendrerit velit at odio sodales pretium. Nam quis tortor sed ante varius sodales. Etiam lacus arcu, placerat sed laoreet a, facilisis sed nunc. Nam gravida fringilla ligula, eu congue lorem feugiat eu.
+
+We can also have citations like \cite{iso-odf}.
+
+\subsection{Related Work}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam lectus vel orci malesuada accumsan. Sed lacinia egestas tortor, eget tristiqu dolor congue sit amet. Curabitur ut nisl a nisi consequat mollis sit amet quis nisl. Vestibulum hendrerit velit at odio sodales pretium. Nam quis tortor sed ante varius sodales. Etiam lacus arcu, placerat sed laoreet a, facilisis sed nunc. Nam gravida fringilla ligula, eu congue lorem feugiat eu.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam lectus vel orci malesuada accumsan. Sed lacinia egestas tortor, eget tristiqu dolor congue sit amet. Curabitur ut nisl a nisi consequat mollis sit amet quis nisl. Vestibulum hendrerit velit at odio sodales pretium. Nam quis tortor sed ante varius sodales. Etiam lacus arcu, placerat sed laoreet a, facilisis sed nunc. Nam gravida fringilla ligula, eu congue lorem feugiat eu.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam lectus vel orci malesuada accumsan. Sed lacinia egestas tortor, eget tristiqu dolor congue sit amet. Curabitur ut nisl a nisi consequat mollis sit amet quis nisl. Vestibulum hendrerit velit at odio sodales pretium. Nam quis tortor sed ante varius sodales. Etiam lacus arcu, placerat sed laoreet a, facilisis sed nunc. Nam gravida fringilla ligula, eu congue lorem feugiat eu.
+
+We are now discussing the \textbf{Ultimate answer to all knowledge}.
+This line is particularly important it also adds an index entry for \textit{Ultimate answer to all knowledge}.\index{Ultimate answer to all knowledge}
+
+\subsection{Demo listings}
+
+We can also include listings like the following:
+
+% Inline Listing example
+\lstset{language=make,caption=Application Makefile,label=lst:app-make}
+\begin{lstlisting}
+CSRCS = app.c
+SRC_DIR =..
+include $(SRC_DIR)/config/application.cfg
+\end{lstlisting}
+
+Listings can also be referenced. References don't have to include chapter/table/figure numbers... so we can have hyperlinks \labelref{like this}{lst:makefile-test}.
+
+\subsection{Tables}
+
+We can also have tables... like \labelindexref{Table}{table:reports}.
+
+\begin{center}
+\begin{table}[htb]
+  \caption{Generated reports - associated Makefile targets and scripts}
+  \begin{tabular}{l*{6}{c}r}
+    Generated report & Makefile target & Script \\
+    \hline
+    Full Test Specification & full_spec & generate_all_spec.py  \\
+    Test Report & test_report & generate_report.py  \\
+    Requirements Coverage & requirements_coverage &
+    generate_requirements_coverage.py   \\
+    API Coverage & api_coverage & generate_api_coverage.py  \\
+  \end{tabular}
+  \label{table:reports}
+\end{table}
+\end{center}
