@@ -15,11 +15,14 @@ Setup:
 * change everything as needed in src/
 * don't forget to change global.tex
 * to change the color of the links search for the word "blue"
-  in thesis.cs.pub.ro and change it
+  in thesis.cs.pub.ro and change it (you might want to print
+  the links in black)
 
 Important note:
 * The "_" (underscore) character doesn't have to be escaped
   ('underscore' package is used)
+* To write in Romanian, uncomment the "Romanian Language support"
+  section in thesis.cs.pub.ro and use UTF8 encoding for .tex files
 
 For syntax definitions please check thesis.cs.pub.ro.cls.
 
