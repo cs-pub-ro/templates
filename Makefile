@@ -11,6 +11,10 @@ thesis.pdf:
 	makeindex thesis.nlo -s nomencl.ist -o thesis.nls
 	pdflatex -interaction=scrollmode --src-specials thesis
 	makeindex thesis.idx
+	@echo; echo; echo
+	@echo "****************************************************"
+	@echo "***** Ignore errors above. Check errors below. *****"
+	@echo
 	pdflatex -interaction=scrollmode --src-specials thesis
 
 .PHONY: clean-tmp
