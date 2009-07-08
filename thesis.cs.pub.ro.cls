@@ -30,6 +30,13 @@
 
 \usepackage{parskip}
 
+% package for variable line spacing (1, 1.5, 2)
+% usage: write \onehalfspacing before the part which should be 
+% with 1.5 line spacing
+% for example, in "thesis.tex" before "\input{src/main}" will make
+% all the chapters with 1.5 line spacing
+\usepackage{setspace}
+
 % hyper-references
 % http://www.tug.org/applications/hyperref/manual.html
 \usepackage{hyperref}

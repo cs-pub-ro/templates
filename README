@@ -3,7 +3,7 @@ E-mail: mircea@bardac.net
 
 Copyright notice: you must keep the original author(s)/copyright information in the files
 
-This directory contains the Bachelor Degree Thesis written by Mircea Bardac
+This directory contains the Bachelor Thesis template written by Mircea Bardac
 - The thesis text is placed in "src/"
 - The thesis is generated into "thesis.pdf"
 
@@ -23,8 +23,14 @@ Important note:
   ('underscore' package is used)
 * To write in Romanian, uncomment the "Romanian Language support"
   section in thesis.cs.pub.ro and use UTF8 encoding for .tex files
+* For different line spacing, write for example \onehalfspacing
+  before the part which should be with 1.5 line spacing;
+  for example, writing this in "thesis.tex" before "\input{src/main}"
+  will make all the chapters with 1.5 line spacing
 
-For syntax definitions please check thesis.cs.pub.ro.cls.
+
+For more syntax definitions please check thesis.cs.pub.ro.cls.
+Some of the definitions and their usage can be found below.
 
 Implemented commands:
 % command for formatting inline functions
