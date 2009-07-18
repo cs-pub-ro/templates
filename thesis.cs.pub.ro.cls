@@ -198,9 +198,13 @@
 %\renewcommand*\familydefault{\sfdefault}
 
 % command for specifying TODOs
-\newcommand{\todo}[1]{ \begin{minipage}{15cm}
- \textbf{TODO:\\#1}
- \end{minipage}
+\newcommand{\todo}[1]{
+	\colorbox{yellow}{
+		\begin{minipage}{15cm}
+			\textbf{TODO:}\\
+			#1
+		\end{minipage}
+	}
 }
 
 % command for formatting inline functions
