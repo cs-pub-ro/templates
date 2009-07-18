@@ -56,10 +56,12 @@ Implemented commands:
 %   pointing to sec:intro
 
 % command for inserting labeled figures
-% Usage: \fig{file}{label}{caption}
+% Usage: \fig[params]{file}{label}{caption}
 %   where: file is the file name
 %          label is the label used for referencing the figure
 %          caption is the text appearing with the figure
+%          params is a list of parameters accepted
+%            by the \includegraphics command, for example "scale=0.5"
 
 % Footnote with hyperlinked URL
 % Usage \footnote{\url{http://www.google.com/}}
