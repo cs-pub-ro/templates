@@ -1,0 +1,107 @@
+% vim: set tw=78 tabstop=4 shiftwidth=4 aw ai:
+\documentclass{beamer}
+
+\usepackage[utf8x]{inputenc}		% diacritice
+\usepackage[romanian]{babel}
+\usepackage{color}			% highlight
+\usepackage{alltt}			% highlight
+
+% highlight; comment this out in case you don't input code source files
+\usepackage{code/highlight}		% highlight
+
+\usepackage{hyperref}			% folosiți \url{http://...}
+					% sau \href{http://...}{Nume Link}
+\usepackage{verbatim}
+
+\mode<presentation>
+{ \usetheme{Berlin} }
+
+% Încărcăm simbolurilor Unicode românești în titlu și primele pagini
+\PreloadUnicodePage{200}
+
+\title[Super proiectul meu de licență]{Super proiectul meu de licență}
+\subtitle{Sesiunea de licență -- iulie 2010}
+\institute{Facultatea de Automatică și Calculatoare,\\
+	Universitatea ``Politehnica'' București}
+\author[Ion Ionescu]{Ion Ionescu}
+\date{9 iulie 2010}
+
+\begin{document}
+
+% Slide-urile cu mai multe părți sunt marcate cu textul (cont.)
+\setbeamertemplate{frametitle continuation}[from second]
+
+% Arătăm numărul frame-ului
+%\setbeamertemplate{footline}[frame number]
+
+\frame{\titlepage}
+
+\frame{\tableofcontents}
+
+% NB: Secțiunile nu sunt marcate vizual, ci doar apar în cuprins
+\section{Context}
+
+% Titlul unui frame se specifică fie în acolade, imediat după \begin{frame},
+% fie folosind \frametitle
+\begin{frame}{TODO}
+	\begin{itemize}		% Just like normal LaTeX
+		\item TODO
+	\end{itemize}
+\end{frame}
+
+\section{Arhitectură și design}
+
+\begin{frame}{TODO}
+	\begin{itemize}
+		\item Formulă simplă
+			\begin{beamerboxesrounded}[lower=block body,shadow=true]{}
+				\texttt{\#define MAX(a, b)   ((a) > (b) ? (a) : (b))}
+			\end{beamerboxesrounded}
+		\item TODO
+	\end{itemize}
+\end{frame}
+
+\section{Implementare}
+
+\begin{frame}{TODO}
+	\begin{itemize}
+		\item TODO
+		\item TODO
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Porțiuni de cod}
+	\input{code/sample}
+\end{frame}
+	
+\section{Rezultate}
+
+\begin{frame}{TODO}
+	\begin{itemize}
+		\item TODO
+		\item TODO
+	\end{itemize}
+\end{frame}
+
+\section{\^{I}ntrebări}
+
+\begin{frame}{Întrebări}
+  \begin{columns}
+    \begin{column}[l]{0.5\textwidth}
+      \begin{itemize}
+        \item cuvânt cheie 1
+        \item cuvânt cheie 2
+        \item cuvânt cheie 3
+        \item cuvânt cheie 4
+        \item cuvânt cheie 5
+      \end{itemize}
+    \end{column}
+    \begin{column}[c]{0.5\textwidth}
+      \begin{figure}
+        \includegraphics[scale=0.3]{img/question-mark}
+      \end{figure}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\end{document}
