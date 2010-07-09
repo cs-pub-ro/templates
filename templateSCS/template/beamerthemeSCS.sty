@@ -1,0 +1,66 @@
+\ProvidesPackage{beamerthemeSCS}
+[2010/05/16 v1.0 beamer 'SCS' theme by MM]
+
+\mode<presentation>
+
+\usefonttheme{default}
+\usecolortheme{SCS}
+\useinnertheme{default}
+\useoutertheme{default}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{frame}}
+
+\setbeamerfont{author}{size=\tiny, series=\mdseries}
+\setbeamerfont{institute}{size=\tiny, series=\mdseries}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{example text}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
+\setbeamerfont{section}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+\setbeamerfont{subtitle}{series=\mdseries, size=\tiny}
+
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TITLE PAGE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbeamertemplate*{title page}{SCS theme}{
+  \vspace*{2.7cm}
+  \begin{center}
+  {\usebeamerfont{title}\usebeamercolor{title}{\color{fg}{\inserttitle}}}
+  \end{center}
+  \begin{flushright}
+  \vspace*{-0.3cm}
+  {\usebeamerfont{subtitle}\usebeamercolor{subtitle}{\color{fg}{\insertsubtitle}}}
+  \end{flushright}
+    \vspace*{1.2cm}
+  \begin{columns}[h]
+    \hspace*{0.2cm}
+    \begin{column}{0.5\textwidth}
+  {\usebeamerfont{author}\usebeamercolor{author}{\color{fg}\insertauthor}}
+  \end{column}
+  \begin{column}{0.4\textwidth}
+  {\usebeamerfont{institute}\usebeamercolor{institute}{\color{fg}\insertinstitute}}
+  \end{column}
+  \end{columns}
+}
+
+\setbeamertemplate{title page}[SCS theme]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% FRAMETITLE PAGE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\defbeamertemplate*{frametitle}{SCS theme}{
+  \begin{flushright}
+    \insertframetitle
+  \end{flushright}
+}
+
+\mode<all>
+
