@@ -3,7 +3,7 @@ PDF = $(addsuffix .pdf, $(BASENAME))
 TEX = $(addsuffix .tex, $(BASENAME))
 PDFLATEX = pdflatex
 OUT_DIR = texfiles
-STY_DIR = ../templateSCS/
+STY_DIR = ../template/
 
 .PHONY: clean all
 
