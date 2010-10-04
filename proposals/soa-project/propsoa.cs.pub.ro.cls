@@ -63,6 +63,9 @@
 % Proposition version; usually in the form 1.0/23.09.2010
 \newcommand{\version}[1]{\def\@version{#1}}
 
+\newcommand{\indexterms}[1]{\def\@indexterms{#1}}
+\newcommand{\keywords}[1]{\def\@keywords{#1}}
+
 \renewcommand{\maketitle}{%
   \enskip
   \begin{center}%
@@ -70,4 +73,8 @@
     {\large \@subtitle \par}%
   \end{center}%
   \enskip \enskip \enskip%
+  \begin{flushleft}
+  \hspace{2cm} \textbf{\textit{Index terms:}} \@indexterms \par
+  \hspace{2cm} \textbf{\textit{Keywords:}} \@keywords \par
+  \end{flushleft}
 }
