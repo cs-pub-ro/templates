@@ -29,6 +29,8 @@
 \usepackage[romanian,english]{babel}
 \usepackage[top=0.59in,bottom=2.98in,left=0.79in,right=0.79in]{geometry}
 \usepackage{underscore}
+% Support for URLs
+\usepackage{hyperref}
 % Support for including graphics
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
@@ -50,6 +52,9 @@
 
 % No indent
 \setlength{\parindent}{0pt}
+
+% Use spaces between paragraphs
+\usepackage{parskip}
 
 % command for specifying TODOs
 \newcommand{\todo}[1]{
@@ -75,8 +80,8 @@
   \end{center}%
   \enskip \enskip \enskip%
   \begin{flushleft}
-  \hspace{2cm} \textbf{\textit{Index terms:}} \@indexterms \par
-  \hspace{2cm} \textbf{\textit{Keywords:}} \@keywords \par
-  \hspace{2cm} \textbf{\textit{Team size:}} \@teamsize \par
+  \hspace{2cm} \textbf{\textit{Index terms:}} \@indexterms \\
+  \hspace{2cm} \textbf{\textit{Keywords:}} \@keywords \\
+  \hspace{2cm} \textbf{\textit{Team size:}} \@teamsize \\
   \end{flushleft}
 }
