@@ -65,6 +65,7 @@
 
 \newcommand{\indexterms}[1]{\def\@indexterms{#1}}
 \newcommand{\keywords}[1]{\def\@keywords{#1}}
+\newcommand{\teamsize}[1]{\def\@teamsize{#1}}
 
 \renewcommand{\maketitle}{%
   \enskip
@@ -76,5 +77,6 @@
   \begin{flushleft}
   \hspace{2cm} \textbf{\textit{Index terms:}} \@indexterms \par
   \hspace{2cm} \textbf{\textit{Keywords:}} \@keywords \par
+  \hspace{2cm} \textbf{\textit{Team size:}} \@teamsize \par
   \end{flushleft}
 }
