@@ -29,6 +29,7 @@
 \usepackage[romanian,english]{babel}
 \usepackage[top=0.59in,bottom=2.98in,left=0.79in,right=0.79in]{geometry}
 \usepackage{underscore}
+\usepackage{hyperref}
 % Support for including graphics
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
