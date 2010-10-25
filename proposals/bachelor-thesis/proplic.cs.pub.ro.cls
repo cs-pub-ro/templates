@@ -52,6 +52,9 @@
 % No indent
 \setlength{\parindent}{0pt}
 
+% Use spaces between paragraphs
+\usepackage{parskip}
+
 % command for specifying TODOs
 \newcommand{\todo}[1]{
   \textbf{TODO:} #1 \par
