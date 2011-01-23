@@ -1,0 +1,40 @@
+\documentclass{report.cs.pub.ro}
+\makeindex
+\begin{document}
+
+\input{src/global}
+
+\begin{frontmatter} % roman numbering
+
+%\maketitle
+\input{template/titlepage.ro}
+\input{template/titlepage.en}
+
+\begin{acknowledgements}
+\input{src/base/acknowledgements}
+\end{acknowledgements}
+
+\begin{abstract}
+\input{src/base/abstract}
+\end{abstract}
+
+\input{template/contents.pages}
+
+\printabbrev
+
+\end{frontmatter} % end roman numbering
+
+% 1.5 linespacing for the contents
+% \onehalfspacing
+
+\input{src/main}
+
+%\appendix
+%\input{src/appendix/index}
+
+\bibliography{src/main}
+\bibliographystyle{plain}
+
+%\printindex
+
+\end{document}

@@ -1,0 +1,69 @@
+% vim: set tw=78 sts=2 sw=2 ts=8 aw et ai:
+\documentclass[12pt]{article}
+
+\usepackage[paper=a4paper, top=2cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+%\usepackage{hyperref}	  % use \url{http://$URL} or \href{http://$URL}{Name}
+\usepackage{underscore}	  % underscores need not be escaped
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{float}
+
+% Support for including graphics
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\title{Grand Report Title}
+
+\author{John Doe, Robert Roe\\
+Automatic Control and Computers Faculty\\
+University Politehnica of Bucharest\\
+Splaiul Independenței nr. 313, Bucharest, Romania \\
+\emph{\{john.doe,robert.roe\}@cs.pub.ro}}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\input{src/abstract}
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+\input{src/introduction}
+
+\section{Architecture}
+\label{sec:architecture}
+\input{src/architecture}
+
+\section{Implementation}
+\label{sec:implementation}
+\input{src/implementation}
+
+\section{Experimental Setup}
+\label{sec:setup}
+\input{src/setup}
+
+\section{Scenarios and Results}
+\label{sec:results}
+\input{src/results}
+
+\section{Conclusion and Further Work}
+\label{sec:conclusion}
+\input{src/conclusion}
+
+\section*{Acknowledgment}
+\label{sec:acknowledgment}
+
+The authors would like to thank XYZ for their support and dedication.
+
+\bibliographystyle{abbrv}
+\bibliography{my-report}
+
+\end{document}
