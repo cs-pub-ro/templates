@@ -1,0 +1,29 @@
+Exam Template for SO/SO2/whatever
+Vlad Dogaru, 2010-2011
+ddvlad-at-rosedu.org
+
+Use sample.tex for a working example. Command names and comments should be
+fairly obvious and no one reads this file anyway.
+
+Some technical (?) details:
+
+ - Greatest challenge of all is fitting 6 questions per half A4 page.
+   You might have to jump through metaphorical hoops to fit question
+   sets with a lot of code.
+
+ - Page looks like crap because of above point. Margins are absurdly small.
+
+ - Enumerate has been redefined to waste less space. Exercise numbers
+   are bolded to stand out.
+
+ - Grids and question lists are generated with for loops. Pure
+   awesomeness.
+
+ - "Header" (i.e. the logos) looks like crap; we should use a hline to
+   separate it from the rest of the text, but that wastes valuable
+   space.
+
+ - We use minipages for "two sets per page" cases; do not use footnotes,
+   there might be dragons there.
+
+For support, contact me at the address at the top of this file.
