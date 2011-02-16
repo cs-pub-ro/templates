@@ -1,21 +1,42 @@
 % Vlad Dogaru, 2010-2011.
 % ddvlad@rosedu.org
-% exam.cs.pub.ro.cls - class for SO, PSO, SOA etc exams. It can probably
-% be adapted for USO as well.
-% This work is available under the LaTeX Project Public License version
-% 1.3.
+% exam.cs.pub.ro.cls - class for USO, SO, PSO, SOA etc exams.
+% This work is available under the LaTeX Project Public License version 1.3.
 % Copyright notice: you must keep the original author(s)/copyright
 % information in the files
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{so-exam.cs.pub.ro}[2010/11/01]
+\ProvidesClass{exam.cs.pub.ro}[2011/02/16]
 
-\let\ExecuteOptions@ltx\ExecuteOptions
-\def\ExecuteOptions#1{%
- \ExecuteOptions@ltx{a4paper,10pt,oneside,final}%
-}%
-\LoadClassWithOptions{article}
-\let\ExecuteOptions\ExecuteOptions@ltx
+\LoadClass[a4paper,10pt,oneside,final]{article}
+
+% Specify course name as a class option.
+\DeclareOption{so}{
+  \def\@course{Sisteme de Operare}
+  \def\@courselogo{img/so}
+  \def\@courselogoscale{0.05}
+}
+\DeclareOption{uso}{
+  \def\@course{Utilizarea Sistemelor de Operare}
+  \def\@courselogo{img/uso}
+  \def\@courselogoscale{0.05}
+}
+\DeclareOption{so2}{
+  \def\@course{Sisteme de Operare 2}
+  \def\@courselogo{img/so}
+  \def\@courselogoscale{0.05}
+}
+\DeclareOption{soa}{
+  \def\@course{Sisteme de Operare Avansate}
+  \def\@courselogo{img/soa}
+  \def\@courselogoscale{0.05}
+}
+% Use this option if the layout should be two sets per page.
+\DeclareOption{twosetsperpage}{\def\@twosets{true}}
+% Use this to leave room for answers between the questions.
+\DeclareOption{answerspace}{\def\@answerspace{true}}
+
+\ProcessOptions
 
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -24,7 +45,6 @@
 \usepackage[top=1cm,bottom=1cm,left=1cm,right=1cm]{geometry}
 \usepackage{underscore}
 \usepackage{comment}
-\usepackage{ifthen}
 \usepackage{forloop}
 \usepackage{array}
 \usepackage{pdflscape}
@@ -41,12 +61,16 @@
 
 \setlength{\parskip}{0pt}
 
+% University logo.
+\def\@unilogo{img/cs}
+\def\@unilogoscale{0.15}
+
 \let\oldverbatim=\verbatim
 \renewenvironment{verbatim}{
   \begin{small}
   \begin{oldverbatim}
-}%
-{%
+}
+{
   \end{oldverbatim}
   \end{small}
 }
@@ -69,8 +93,6 @@
   \textbf{TODO:} #1 \par
 }
 
-% Course the exam is in
-\newcommand{\course}[1]{\def\@course{#1}}
 % Date of the exam
 \renewcommand{\date}[1]{\def\@date{#1}}
 % Time for the exam, preferably in the form "Timp de lucru: x minute"
@@ -78,8 +100,6 @@
 % Note that appears on top of the sheet. "Toate raspunsurile trebuie
 % motivate" or something like that.
 \newcommand{\note}[1]{\def\@note{#1}}
-% Use this if the layout should be two sets per page.
-\newcommand{\twosetsperpage}{\def\@twosets{true}}
 % Define question directory and number of questions.
 \newcommand{\questions}[2]{
   \def\@questiondir{#1}
@@ -89,18 +109,6 @@
 \newcommand{\gradingcount}[2]{%
   \def\@gradingrows{#1}%
   \def\@gradingcols{#2}%
-}
-% Use this command to set the course logo and scale. Scale is second.
-% Note that this is unused at the time for lack of space.
-\newcommand{\courselogo}[2]{%
-  \def\@courselogo{#1}%
-  \def\@courselogoscale{#2}
-}
-% Use this command to set the Univeristy logo and scale. Scale is second.
-% Note that this is unused at the time for lack of space.
-\newcommand{\unilogo}[2]{%
-  \def\@unilogo{#1}%
-  \def\@unilogoscale{#2}%
 }
 
 \renewcommand{\maketitle}{%
@@ -119,8 +127,20 @@
   \begin{enumerate}
     \forloop{questionctr}{1}
         {\value{questionctr} < \@numquestions}
-        {\item \input{\@questiondir/\arabic{questionctr}}}
+        {
+          \item \input{\@questiondir/\arabic{questionctr}}
+          \ifdefined\@answerspace
+            \\[2cm]
+          \else
+            \relax
+          \fi
+        }
     \item \input{\@questiondir/\arabic{questionctr}}
+    \ifdefined\@answerspace
+      \\[2cm]
+    \else
+      \relax
+    \fi
   \end{enumerate}
 }
 
@@ -189,10 +209,10 @@
 
 % This should take care of everything you need.
 % Define @twosets to false if not previously defined.
-\def\@twosets{false}
+%\def\@twosets{false}
 \newcommand\makecontent{
-  \ifthenelse{\equal{\@twosets}{true}}
-    {\begin{landscape}
+  \ifdefined\@twosets
+    \begin{landscape}
       \begin{minipage}[h]{0.45\paperheight}
         \content
       \end{minipage}
@@ -201,11 +221,12 @@
         \content
       \end{minipage}
     \end{landscape}
-    }
-    {\content}
+  \else
+      \content
+  \fi
   \pagebreak
-  \ifthenelse{\equal{\@twosets}{true}}
-    {\begin{landscape}
+  \ifdefined\@twosets
+    \begin{landscape}
       \begin{minipage}[h]{0.45\paperheight}
         \@declaration
       \end{minipage}
@@ -214,6 +235,7 @@
         \@declaration
       \end{minipage}
     \end{landscape}
-    }
-    {\@declaration}
+  \else
+    \@declaration
+  \fi
 }

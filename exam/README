@@ -5,7 +5,25 @@ ddvlad-at-rosedu.org
 Use sample.tex for a working example. Command names and comments should be
 fairly obvious and no one reads this file anyway.
 
-Some technical (?) details:
+== Class options
+
+ - uso/so/soa/so2 -- set the course name and logo;
+
+ - twosetsperpage -- print two sets per A4 landscape page, suitable for small
+   tests;
+
+ - answerspace -- leave a 2cm space between questions, suitable for short
+   answers.
+
+== Caveats
+
+ - twosetsperpage can't tell if the questions are too many for a page and can't
+   break pages properly. This especially sucks when using answerspace;
+
+ - the space between questions when using answerspace is hardcoded; just search
+   for "2cm" in the class file if you need to change it.
+
+== Some technical (?) details
 
  - Greatest challenge of all is fitting 6 questions per half A4 page.
    You might have to jump through metaphorical hoops to fit question
