@@ -1,0 +1,15 @@
+*.aux
+*.log
+*.lof
+*.lot
+*.bbl
+*.out
+*.toc
+*.idx
+*.ind
+*.ilg
+*.nlo
+*.nls
+*.blg
+*~
+/thesis.pdf
