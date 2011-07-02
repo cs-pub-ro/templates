@@ -1,0 +1,55 @@
+% Creates the text for referring to the figure identified by the key given as
+% the first argument.
+\newcommand{\figname}[1]{\emph{figura \ref{#1}}}
+
+% Inserts a new figure, with these parameters:
+%	#1 - filename of the figure to be inserted
+%	#2 - caption for the figure
+%	#3 - label for the figure (used in \ref-ing the figure)
+\newcommand{\insfig}[3]{
+	\begin{figure}[!htb]
+		\begin{center}
+			\fbox{
+				%\includegraphics[width=0.75\textwidth]{#1}
+ 				\includegraphics{#1}
+			}
+			\caption{#2\label{#3}}
+			
+	    \end{center}
+	\end{figure}
+}
+
+% Inserts a new figure, with these parameters:
+%	#1 - filename of the figure to be inserted
+%	#2 - caption for the figure
+%	#3 - label for the figure (used in \ref-ing the figure)
+%	#4 - fraction of the text width occupied by the figure
+\newcommand{\insfigw}[4]{
+	\begin{figure}[!htb]
+		\begin{center}
+			\fbox{
+				\includegraphics[width=#4\textwidth]{#1}
+			}
+			\caption{#2\label{#3}}
+			
+	    \end{center}
+	\end{figure}
+}
+
+% Inserts a new figure, with these parameters:
+%	#1 - filename of the figure to be inserted
+%	#2 - caption for the figure
+%	#3 - caption for display in the list of figures
+%	#4 - label for the figure (used in \ref-ing the figure)
+%	#5 - fraction of the text width occupied by the figure
+\newcommand{\insfigshw}[5]{
+	\begin{figure}[!htb]
+		\begin{center}
+			\fbox{
+				\includegraphics[width=#5\textwidth]{#1}
+			}
+			\caption[#3]{#2\label{#4}}
+			
+	    \end{center}
+	\end{figure}
+}

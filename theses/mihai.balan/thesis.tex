@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Diploma project template - (C) Balan Mihail-Alexandru, 2009           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Print on A4 paper, double-sided, base font size 12pt
+%\documentclass[a4paper,12pt,twoside,draft]{report}
+\documentclass[a4paper,12pt,twoside]{report}
+
+% \usepackage[top=3.81cm,bottom=3cm,left=3.5cm,right=2.54cm]{geometry}
+\usepackage[top=3.81cm,bottom=3cm,inner=3.5cm,outer=2.54cm]{geometry}
+
+% Actual font selection
+\usepackage{pxfonts} % bookman | pxfonts | cmbright
+
+% Include support for romanian hyphenation (if installed on your sistem)
+\usepackage[romanian]{babel}
+
+% Include support for correct printing of romanian characters
+\usepackage[T1]{fontenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+% Include support for graphics
+\usepackage[pdftex]{color,graphicx}
+
+% Include support for hyperlinks in the document
+\usepackage{hyperref}
+\hypersetup{unicode=true,%
+	colorlinks=true,%
+	citecolor=black,%
+	filecolor=black,%
+	linkcolor=black,%
+	urlcolor=blue}
+
+\setcounter{tocdepth}{3}
+
+% Indent first paragraph
+\usepackage{indentfirst}
+
+% Describing algorithms
+\usepackage[figure,longend,lined,boxed]{algorithm2e}
+% \usepackage{algorithmic}
+
+% Settings for using source highlighter
+\input{highlight.tex}
+
+% Setup some new commands for easier image inserting and figure referencing
+\input{commands}
+
+% Setting headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LE]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+
+% Set spacing at 1.5lines
+\linespread{1.3}
+
+% Document begins here
+\begin{document}
+
+% Create title page
+\include{cover}
+
+% Leave a blank page for double side printing
+\thispagestyle{empty}
+\newpage
+\hbox{}
+
+% insert the table of contents
+\tableofcontents
+\newpage
+
+\include{chapter1}
+
+% Include appendix
+\appendix
+\include{appendix1}
+
+% Include list of figures
+\clearpage
+\addcontentsline{toc}{chapter}{Lista de figuri}
+\listoffigures
+
+% Include bibliography
+\include{biblio}
+
+\end{document}
