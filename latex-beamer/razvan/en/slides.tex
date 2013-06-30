@@ -19,6 +19,35 @@
 % Încărcăm simbolurilor Unicode românești în titlu și primele pagini
 \PreloadUnicodePage{200}
 
+% Arătăm numărul frame-ului
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+
+\setframeofframes{of}
+\makeatletter
+\setbeamertemplate{footline}
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+      \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+      \hfill%
+      {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      {\usebeamerfont{title in head/foot}\insertshorttitle}%
+      \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
 \title[My Super Bachelor Thesis]{My Super Bachelor Thesis}
 \subtitle{Bachelor Thesis Session -- July 2010}
 \institute{Faculty of Automatic Control and Computers,\\
@@ -31,9 +60,6 @@
 
 % Slide-urile cu mai multe părți sunt marcate cu textul (cont.)
 \setbeamertemplate{frametitle continuation}[from second]
-
-% Arătăm numărul frame-ului
-% \setbeamertemplate{footline}[frame number]
 
 \frame{\titlepage}
 
