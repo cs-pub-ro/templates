@@ -1,0 +1,115 @@
+% Guide for Authors
+% This file may be used as a template for writing a paper for submission to the "U.P.B. Scientific Bulletin"
+
+\documentclass[12pt,twoside,a4paper,reqno]{amsart}
+\usepackage{bulletinUPB}
+
+% Include your preferred graphics and mathematics packages here, using the command \usepackage{}
+\usepackage{graphics}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage{amsmath}
+\usepackage{msc}
+
+% Romanian Language support
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\PrerenderUnicode{aâîțșĂÎÂȚȘ}
+
+%\usepackage{mathptmx} % font Times New Roman
+
+%\renewcommand{\baselinestretch}{1.005} %changing the interline spacing
+
+% to be added afterwards
+% Series %Vol. %Iss. % Year
+\info{A}{72}{1}{2010}
+% to be added afterwards
+\setcounter{page}{11}
+
+
+\title{Your title}
+
+
+\author{the first author}
+\address{$^1$Lecturer, Dunărea de Jos University of Galații, Romania, e-mail: {\tt gbercu@ugal.ro}}
+
+\author{the second}
+\address{$^2$Teacher, Technical College of Nehoiu, Buzău County, Romania}
+
+\author{the third}
+\address{$^3$Professor, Faculty of Applied Sciences, University POLITEHNICA of Bucharest, Romania}
+
+%\dedicatory{A dedication can be included here}
+
+
+\begin{document}
+
+\pagestyle{headings}
+\maketitle
+
+
+%%%%%% Abstract
+\begin{abstract}
+{\it abstract in Romanian}
+
+\mm \mm
+
+{\it \quad\qu abstract in English}
+\end{abstract}
+
+%%%%% Keywords
+\begin{Keywords}
+self-concordant function, ...
+\end{Keywords}
+
+%%%%%%% 2000 Mathematics Subject Clasification:
+\subjclass[2010]{Primary XXXX; Secondary YYYY}
+
+%\setcounter{equation}{0}
+%%%%%%%%%%%%
+\section{Introduction}
+\label{sec:intro}
+\input{src/introduction}
+
+%\setcounter{equation}{0}
+%%%%%%%%%%%
+\section{Section Title}
+\label{sec:section}
+\input{src/section}
+
+%\setcounter{equation}{0}
+%%%%%%%%%%%
+\section{Another Section Title}
+\label{sec:another-section}
+\input{src/another-section}
+
+%\setcounter{equation}{0}
+%%%%%%%%%%5
+\section{Conclusion}
+\label{sec:conclusion}
+\input{src/conclusion}
+
+\bigskip
+
+%%%%%%%%%%%
+
+\bibliographystyle{abbrv}
+\bibliography{paper}
+
+%\begin{thebibliography}{99}
+%\setlength{\baselineskip}{.45cm}
+%
+%%author name in italic
+%
+%%volume number boldface
+%
+%%standard abreviation is necessary
+%
+%
+%\bibitem{bp1} {\it G. Bercu and M. Postolache}, Class of
+%self-concordant functions on Riemannian manifolds, Balkan J. Geom.
+%Appl., {\bf 14}(2009), No. 2, 13-20.
+%
+%\end{thebibliography}
+
+\end{document}

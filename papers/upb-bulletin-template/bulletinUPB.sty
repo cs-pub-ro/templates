@@ -1,0 +1,236 @@
+%%% Standard format for the "U.P.B. Scientific Bulletin", University POLITEHNICA of  Bucharest, ROMANIA %%%%%%%
+%%% 3 authors version
+
+\ProvidesPackage{bulletinUPB}[2009/06/24 U.P.B. Scientific Bulletin]
+\NeedsTeXFormat{LaTeX2e}
+
+%%%%%%%%%% Format 17 x 24
+\setlength{\textheight}{29.7cm}
+\addtolength{\textheight}{-7cm}
+\addtolength{\textheight}{-\headheight}
+\addtolength{\textheight}{-\headsep}
+\setlength{\headheight}{\baselineskip}
+\setlength{\headsep}{\baselineskip}
+\addtolength{\textheight}{-\footskip}
+\setlength{\footskip}{0,3 cm}
+%\setlength{\footheight}{3 cm}
+\setlength{\topmargin}{3cm}
+\addtolength{\topmargin}{-1in}
+\setlength{\topskip}{0pt}
+\setlength{\textwidth}{21.0cm}
+\addtolength{\textwidth}{-7cm}
+\setlength{\oddsidemargin}{3.5cm}
+\addtolength{\oddsidemargin}{-1in}
+\setlength{\evensidemargin}{\oddsidemargin}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\parindent}{1cm}
+
+%%%%%% ISSN
+\def\ISSN{1223-7027}
+
+%%%%% Logo prima pagina
+\def\publname{U.P.B. Scientific Bulletin}
+\def\article@logo{
+\underline{\footnotesize U.P.B.\ Sci.\ Bull., Series \currentseries, Vol.\ \currentvolume, Iss.\  \currentissue, \currentyear  \hspace{4,7 cm} ISSN  \ISSN}
+}
+
+\newcommand{\info}[4]{
+  \def\currentseries{#1}
+  \def\currentvolume{#2}
+  \def\currentissue{#3}
+  \def\currentyear{#4}
+}
+
+\def\@setkeywords{}
+\def\@setsubjclass{}
+
+%%%%% Autori
+\def\@setauthors{
+  \begingroup
+  \def\thanks{\protect\thanks@warning}
+  \trivlist
+  \centering\small \@topsep30\p@\relax
+  \advance\@topsep  -\baselineskip
+  \item\relax
+  \author@andify\authors
+  \def\\{\protect\linebreak}
+ \authors
+  \ifx\@empty\contribs
+  \else
+    ,\penalty-3 \space \@setcontribs
+    \@closetoccontribs
+  \fi
+%%% adaugat pentru autori
+$^3$
+\endtrivlist
+  \endgroup
+}
+
+%%%%%Adrese
+\def\@setaddresses{
+\vspace{-0,7 cm}\begingroup
+\footnotesize
+  \def\author##1{\vspace{-0,3 cm}}
+  \def\\{\unskip, \ignorespaces}
+  \interlinepenalty\@M
+  \def\address##1##2{\begingroup
+    \par\addvspace\bigskipamount\indent
+  \@ifnotempty{##1}{(\ignorespaces##1\unskip )}
+   {\ignorespaces##2}\par\endgroup}
+    \addresses
+  \endgroup
+}
+
+\renewcommand{\andify}{ \nxandlist{\unskip, }{\unskip{},~}{\unskip,~}}
+\def\author@andify{  \nxandlist {\unskip
+%%% adaugat pentru autori
+$^1$,\penalty-1 \space\ignorespaces}    {\unskip {}$^1$  \@@and~}    {\unskip  \penalty-2
+%%% adaugat pentru autori
+$^2$, ~} }
+
+
+\def\@adminfootnotes{
+  \let\@makefnmark\relax  \let\@thefnmark\relax
+  \ifx\@empty\@address\else \@footnotetext{\@setaddresses}\fi
+}
+
+\def\enddoc@text{\,}
+\AtEndDocument{\enddoc@text}
+
+\def\ps@headings{\ps@empty
+  \def\@evenhead{
+    \setTrue{runhead}
+    \normalfont\scriptsize
+\put(0,-3){\line(1,0){398}}\thepage\hfil\leftmark\hfil}
+  \def\@oddhead{
+    \setTrue{runhead}
+    \normalfont\scriptsize
+\put(0,-3){\line(1,0){398}}\hfil\rightmark\hfil\thepage}
+  \let\@mkboth\markboth}
+
+%%%%% Abstract
+\renewcommand{\abstractname}{\hspace{1 cm}}
+\renewenvironment{abstract}{
+  \ifx\maketitle\relax
+    \ClassWarning{\@classname}{  \protect\maketitle\space }
+  \fi
+  \global\setbox\abstractbox=\vtop \bgroup
+    \normalfont\Small
+    \list{}{\it\labelwidth\z@
+      \leftmargin3pc \rightmargin\leftmargin
+      \listparindent\normalparindent \itemindent\z@
+      \parsep\z@ \@plus\p@
+      \let\fullwidthdisplay\relax
+    }
+    \item[\hskip\labelsep\scshape\abstractname]
+}{  \endlist\egroup
+  \ifx\@setabstract\relax \@setabstracta \fi
+}
+
+\def\maketitle{\par
+  \@topnum\z@
+  \thispagestyle{firstpage}% this sets first page specifications
+%  \uppercasenonmath\shorttitle
+  \ifx\@empty\shortauthors \let\shortauthors\shorttitle
+  \else \andify\shortauthors
+  \fi
+  \@maketitle@hook
+  \begingroup
+  \@maketitle
+  \toks@\@xp{\shortauthors}\@temptokena\@xp{\shorttitle}
+  \toks4{\def\\{ \ignorespaces}}% defend against questionable usage
+  \edef\@tempa{
+    \@nx\markboth{\the\toks4
+      \@nx{\the\toks@}}{\the\@temptokena}}
+  \@tempa
+  \endgroup
+  \c@footnote\z@
+  \@cleartopmattertags
+}
+
+
+%%%%% Keywords
+\newenvironment{Keywords}{
+\vspace{-0,3 cm}
+\setbox\abstractbox=\vtop \bgroup
+    \normalfont\Small
+    \list{}{\labelwidth\z@
+\leftmargin3pc \rightmargin\leftmargin}
+\item[\hskip\labelsep \bf Keywords:]}
+{\egroup  \@setabstracta
+}
+
+%%%%%%%% subjclass
+\newenvironment{MSC2010}{
+\vspace{-0,5 cm}
+\setbox\abstractbox=\vtop \bgroup
+    \normalfont\Small
+    \list{}{\labelwidth\z@
+\leftmargin3pc \rightmargin\leftmargin}
+\item[\hskip\labelsep \bf MSC2010:]}
+{\egroup  \@setabstracta
+}
+
+
+%%%%%% section
+\def\section{\@startsection{section}{1}
+ \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}
+{\bfseries\indent}}
+%\renewcommand \thesection {\@arabic\c@section}
+
+
+
+\def\subsection{\@startsection{subsection}{1}
+  \z@{.7\linespacing\@plus\linespacing}{.5\linespacing}
+{\bf\indent}}
+\renewcommand\thesubsection{\thesection.{\bf\arabic{subsection}}}
+
+\def\subsubsection{\@startsection{subsubsection}{3}%
+  \z@{.5\linespacing\@plus.7\linespacing}{-.5em}%
+  {\normalfont\itshape}}
+
+
+%%%%%%%%%% tabele
+\newenvironment{Table}[2]{\footnotesize{\begin{flushright}
+{\it Table #1}
+\end{flushright}}
+\vspace{-0,6 cm}
+$$\hbox{\bf #2}\vspace{-0,3 cm}$$
+}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{algorithm}{Algorithm}[section]
+\newtheorem{remark}{Remark}[section]
+\newtheorem{criterion}{Criterion}[section]
+\renewcommand{\refname}{\rm \hfil R\,E\,F\,E\,R\,E\,N\,C\,E\,S\hfil}
+\newcommand{\di}{\displaystyle}
+\newcommand{\mm}{\medskip}
+\newcommand{\ov}{\over}
+\newcommand{\ld}{\ldots}
+\newcommand{\sm}{\smallskip}
+\newcommand{\cd}{\cdots}
+\newcommand{\ty}{\infty}
+\newcommand{\pp}{\prime}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\na}{\nabla}
+\newcommand{\de}{\delta}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\qu}{\quad}
+\newcommand{\la}{\lambda}
+\newcommand{\si}{\sigma}
+\newcommand{\al}{\alpha}
+\newcommand{\be}{\beta}
+\newcommand{\Om}{\Omega}
+\newcommand{\pa}{\partial}
+\newcommand{\ol}{\overline}
+\newcommand{\noa}{\noalign{\medskip}}
+\newcommand{\br}{\mathbb R}
+\newcommand{\bn}{\mathbb N}
+\newcommand{\fo}{\forall}
