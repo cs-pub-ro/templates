@@ -1,0 +1,122 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, left=25mm, right=25mm, top=20mm, bottom=20mm]{geometry}
+\usepackage{newtxtext,newtxmath} % for Times New Roman
+\usepackage{etoolbox}
+\usepackage{setspace}
+\usepackage{sectsty}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{authblk}
+
+% for text size requirements
+\makeatletter
+\makeatother
+
+% section size requirements
+\sectionfont{\fontsize{14}{14}\selectfont}
+% title size requirements
+\titleformat{\title}[display]{\fontsize{14pt}{14pt}\bfseries}{}{12pt}{}
+
+% abstract
+\renewenvironment{abstract}{%
+\begin{center}%
+    \small \textbf{\abstractname} \it
+}
+{
+\end{center}%
+\quotation
+}
+
+\newenvironment{keywords}
+{\textbf{Keywords--}}
+
+\title{\textbf{Template SCSS 2022 UPB}}
+\author[1]{Author1}
+\author[1]{Author2}
+\author[1]{Coordinator\vspace*{-0.4cm}} % last author must be the coordinator
+
+\affil[ ]{\textit{email1@xyz.edu, email2@xyz.edu, email3@xyz.edu}}
+\affil[1]{Faculty of Automatic Control and Computer Science, University Politehnica of Bucharest}
+\date{April 2022}
+
+\singlespacing % single line spacing
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel eros orci. Proin tincidunt lacinia tortor eu aliquet. Aenean nec consequat nisi, at eleifend nisl. Nam id dolor mi. Donec faucibus mauris et viverra maximus. Nullam nisi lectus, tincidunt a vehicula et, accumsan id libero. Fusce cursus lorem enim, in gravida nisi facilisis quis. Cras imperdiet mi at lorem sodales, tincidunt fermentum ipsum semper. Suspendisse potenti.
+\end{abstract}
+\begin{keywords}
+Lorem, ipsum, dolor, sit, amet
+\end{keywords}
+
+
+\section{Introduction}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel eros orci. Proin tincidunt lacinia tortor eu aliquet. Aenean nec consequat nisi, at eleifend nisl. Nam id dolor mi. Donec faucibus mauris et viverra maximus. Nullam nisi lectus, tincidunt a vehicula et, accumsan id libero. Fusce cursus lorem enim, in gravida nisi facilisis quis. Cras imperdiet mi at lorem sodales, tincidunt fermentum ipsum semper. Suspendisse potenti.
+
+Proin iaculis dapibus lobortis. Maecenas sapien libero, efficitur eget mollis eu, egestas vel lacus. Etiam fermentum efficitur nunc, ut tincidunt magna feugiat quis. Vivamus purus lectus, semper eget condimentum eget, ultricies eget neque. Ut sagittis arcu in tortor cursus, vel euismod quam venenatis. In dictum a dui eget mattis. Cras sed volutpat elit. Cras sapien massa, malesuada id fermentum scelerisque, rhoncus id mauris. Sed nec ligula tortor.
+
+\section{State of the Art}
+Integer tellus nibh, imperdiet ut neque vel, tempus viverra nisl. Pellentesque feugiat, tortor commodo pharetra finibus, justo nunc aliquam purus, ut aliquam ipsum ante aliquam ligula. Nulla mollis orci suscipit cursus luctus. Nullam sed malesuada metus. Duis suscipit, turpis pulvinar sollicitudin mattis, lacus lectus pharetra nunc, sit amet tempus nunc urna ac turpis. Donec sapien risus, dapibus quis volutpat eu, auctor quis enim. Praesent at dignissim ex. Aliquam tristique arcu sed orci posuere, quis vulputate felis porta. Nullam non nisi mi. Maecenas nec nisi sed magna posuere venenatis non quis arcu. Integer sodales enim metus, nec tempor neque commodo in. Nunc vel vulputate erat.
+
+Cras gravida volutpat massa sit amet fermentum. Morbi a viverra libero. Duis vehicula eros augue, ac mattis velit molestie facilisis. Nunc tempor felis tellus, eget commodo metus eleifend nec. Nunc sollicitudin molestie mattis. Aenean convallis nisi eget turpis blandit, sed congue velit porttitor. Mauris at ipsum eu mi fermentum suscipit eu vitae ipsum. Phasellus tempor, diam sed lobortis tristique, ligula erat lacinia justo, et feugiat nunc nunc a orci. Praesent aliquam tellus tellus, quis ornare ipsum consectetur eget. Morbi ac arcu posuere, imperdiet enim id, rutrum ipsum. Suspendisse vulputate libero nulla, a lobortis augue aliquet ut. Sed sed justo vitae orci gravida sollicitudin. Duis faucibus at metus vel scelerisque. Nullam vehicula eleifend nisl eget maximus. Aenean nisi massa, faucibus vitae nunc id, porttitor ornare mi.
+
+\section{Figures, tables and equations}
+
+Use Figure \ref{fig:example} as a figure example.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{img/figure.png}
+\caption{Example}
+\label{fig:example}
+\end{figure}
+
+Use Table \ref{tab:example} as a table example.
+\begin{table}[h!]
+\centering
+\caption{Example}
+\label{tab:example}
+\begin{tabular}{c c c}
+ \hline
+ \textbf{X} & \textbf{Y}  & \textbf{Z}\\
+ \hline
+ 1 & 10 & lorem \\
+ 2 & 20 & ipsum \\
+ 3 & 40 & dolor \\
+ 4 & 50 & sit   \\
+ \hline
+\end{tabular}
+\end{table}
+
+Use Equation \ref{eq:example} as an equation example.
+
+\begin{equation}
+\label{eq:example}
+\sum_{i=1}^{4} x_i * y_i
+\end{equation}
+
+\section{References}
+
+Use IEEE guidelines\footnote{IEEE References: https://pitt.libguides.com/citationhelp/ieee, [Online], Last Accessed: 13th of April, 2022} for citing your bibliography.
+
+Cite like this \cite{b1} or like this \cite{b1, b2}.
+
+\section{Conclusions}
+Mauris tempor nunc at augue fermentum egestas dapibus ac ante. Morbi dignissim erat et metus dictum elementum. Quisque posuere a est a scelerisque. Phasellus gravida fermentum lacus gravida eleifend. Maecenas sed viverra orci, et tincidunt lacus. Sed gravida vitae orci ut dictum. Integer eu dui imperdiet, placerat sapien sit amet, aliquet lacus.
+
+\begin{flushleft}
+    \begin{thebibliography}{99}
+
+    \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+
+    \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+
+    \end{thebibliography}
+\end{flushleft}
+
+\end{document}
