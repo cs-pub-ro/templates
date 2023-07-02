@@ -6,6 +6,8 @@ This folder contains a LaTex template for writing a master's thesis.
 
 It is intended to provide the LaTeX primitives that can be used to create these types of presentations, rather than to advocate a specific content structure. Please review [this website](https://wiki.cs.pub.ro/studenti/diploma/indicatii#indicatii-pentru-realizarea-proiectului-de-diploma)'s suggestions for the latter.
 
+Only the files in the `images`, `chapters`, and `configuration` folders are intended to be altered. Feel free to make changes to any file if you wish to further tweak the theme!
+
 ## How To Use
 
 1. Import the `project` folder into Overleaf.
