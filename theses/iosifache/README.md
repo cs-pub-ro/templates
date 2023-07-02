@@ -2,7 +2,7 @@
 
 ## Description
 
-This folder offers a LaTex template for master's thesis.
+This folder contains a LaTex template for writing a master's thesis.
 
 It is intended to provide the LaTeX primitives that can be used to create these types of presentations, rather than to advocate a specific content structure. Please review [this website](https://wiki.cs.pub.ro/studenti/diploma/indicatii#indicatii-pentru-realizarea-proiectului-de-diploma)'s suggestions for the latter.
 
@@ -19,7 +19,7 @@ It is intended to provide the LaTeX primitives that can be used to create these 
 
 ## Preview
 
-<a href="thesis/thesis.pdf">
+<a href="export.pdf">
     <kbd>
         <img src="preview.jpg" width="400px" alt="Preview">
     </kbd>

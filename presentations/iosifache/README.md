@@ -16,7 +16,7 @@ It is intended to provide the LaTeX primitives that can be used to create these 
 
 ## Preview
 
-<a href="thesis/thesis.pdf">
+<a href="export.pdf">
     <kbd>
         <img src="preview.jpg" width="400px" alt="Preview">
     </kbd>
