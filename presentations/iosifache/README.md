@@ -6,6 +6,8 @@ This folder offers a LaTex template that you can use to present your master's th
 
 It is intended to provide the LaTeX primitives that can be used to create these types of presentations, rather than to advocate a specific content structure. Please review [this website](https://wiki.cs.pub.ro/studenti/diploma/indicatii#realizare-slide-uri-pentru-sustinereprezentare)'s suggestions for the latter.
 
+Only `configuration.tex` and the files in the `frames` and `images` folders are intended to be altered. Feel free to make changes to any file if you wish to further tweak the theme!
+
 ## How To Use
 
 1. Import the `project` folder into Overleaf.
