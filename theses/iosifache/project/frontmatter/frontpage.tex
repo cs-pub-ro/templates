@@ -1,0 +1,46 @@
+\newcommand{\frontPage}[6]{
+    \begin{titlepage}
+        \begin{center}
+            {\Large #1}
+            \vspace{50pt}
+            \begin{tabular}{p{6cm}p{4cm}}
+                \includegraphics[scale=0.15]{images/theme/upb.png} &
+                \includegraphics[scale=0.5,trim={14cm 11cm 2cm 5cm},clip=true]{images/theme/cs.pdf}
+            \end{tabular}
+
+            \vspace{105pt}
+            {\Huge #2} \\
+            \vspace{40pt}
+            {\Large #3} \\ \vspace{0pt}
+            {\Large #4} \\
+            \vspace{40pt}
+            {\LARGE \detailstudentname} \\
+        \end{center}
+        \vspace{60pt}
+        \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{6cm}r}
+            &{\large\textbf{#5}}\vspace{10pt} \\
+            &{\large \detailadvisor}
+        \end{tabular*}
+        \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}p{6cm}r}
+            &{\large \detailsecondaryadvisor}
+        \end{tabular*}
+        \vspace{20pt}
+        \begin{center}
+            {\large\textbf{\City}}\\
+            \vspace{0pt}
+            {\normalsize \detailyear}
+        \end{center}
+    \end{titlepage}
+}
+
+\newcommand{\UniTextEN}{
+    UNIVERSITY POLITEHNICA OF BUCHAREST \\[\HeaderLineSpace]
+    FACULTY OF AUTOMATIC CONTROL AND COMPUTERS \\[\HeaderLineSpace]
+    COMPUTER SCIENCE AND ENGINEERING DEPARTMENT\\
+}
+\newcommand{\DiplomaEN}{MASTER THESIS}
+\newcommand{\City}{BUCHAREST}
+
+\newcommand{\frontPageEN}{\frontPage{\UniTextEN}{\DiplomaEN}{\detailtitle}{\detailsubtitle}{Thesis Advisors:}{\BucEN}}
+
+\frontPageEN
