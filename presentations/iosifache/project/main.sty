@@ -1,0 +1,73 @@
+\ProvidesPackage{main}
+
+% Packages
+\usepackage[export]{adjustbox}
+\usepackage[english]{babel}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{subfiles}
+\usepackage{tikz}
+
+% TikZ configuration
+\usetikzlibrary{calc}
+
+% Beamer configuration
+\mode<presentation>{
+    \usetheme{default}
+    \usecolortheme{seagull}
+    \usefonttheme{default}
+    \setbeamertemplate{caption}[numbered]
+}
+\setbeamertemplate{frametitle}{\nointerlineskip
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.75ex,dp=1.375ex]{frametitle}
+        \hspace*{2ex} \small \bfseries \insertframetitle \hfill \hspace*{1ex}%
+    \end{beamercolorbox}\par\vskip-1pt\hrulefill}
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamerfont{footnote}{size=\tiny}
+\AtBeginEnvironment{table}{\tiny}
+
+% Numbered slides
+\def\insertadjustedtotalpages{
+    \pgfmathparse{\inserttotalframenumber}
+    \pgfmathprintnumber[fixed]{\pgfmathresult}
+}
+\newcommand{\startnumbering}{
+    \addtobeamertemplate{navigation symbols}{}{
+        \hspace{1em}
+        \usebeamerfont{footline}%
+        \insertframenumber\hspace{0.1cm}/\insertadjustedtotalpages
+    }
+}
+
+% Path to images
+\graphicspath{images}
+
+% Renaming the captions
+\addto\captionsenglish{\renewcommand{\figurename}{Figure}}
+\captionsetup[table]{name=Table}
+
+% Details about the thesis
+\newcommand{\detaildate}{}
+\newcommand{\detailcountry}{}
+\newcommand{\detailcity}{}
+\newcommand{\detailspecialization}{}
+\newcommand{\detailtitle}{}
+\newcommand{\detailauthor}{}
+\newcommand{\detailadviser}{}
+\newcommand{\detailsecondadviser}{}
+
+% Commands for setting the details above
+\newcommand{\setdetaildate}[1]{\renewcommand{\detaildate}{#1}}
+\newcommand{\setdetailcountry}[1]{\renewcommand{\detailcountry}{#1}}
+\newcommand{\setdetailcity}[1]{\renewcommand{\detailcity}{#1}}
+\newcommand{\setdetailspecialization}[1]{\renewcommand{\detailspecialization}{#1}}
+\newcommand{\setdetailtitle}[1]{\renewcommand{\detailtitle}{#1}}
+\newcommand{\setdetailauthor}[1]{\renewcommand{\detailauthor}{#1}}
+\newcommand{\setdetailadviser}[1]{\renewcommand{\detailadviser}{#1}}
+\newcommand{\setdetailsecondadviser}[1]{\renewcommand{\detailsecondadviser}{#1}}
+
+% User's details
+\input{configuration}

@@ -1,0 +1,79 @@
+\section{Examples}
+
+\begin{frame}{Slide with Text Elements} \pause
+    \begin{itemize}
+        \item Item \pause
+        \item Item with a nested list \pause
+              \begin{itemize}
+                  \item Item \pause
+                  \item Item \pause
+                  \item Item \pause
+              \end{itemize}
+        \item Item with a footnote\footnote{Some text} \pause
+        \item Item with a \href{https://acs.pub.ro}{link} \pause
+        \item item with some code: \texttt{import pandas}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Slide with a Grid with Logos} \pause
+    \begin{itemize}
+        \item Item \pause
+        \item Item
+    \end{itemize} \pause
+
+    \vfill
+
+    \begin{figure}
+        \centering
+        \subfigure{\includegraphics[width=0.05\textwidth]{images/theme/upb.png}}
+        \hspace{1em}
+        \subfigure{\includegraphics[width=0.05\textwidth]{images/theme/upb.png}}
+        \hspace{1em}
+        \subfigure{\includegraphics[width=0.05\textwidth]{images/theme/upb.png}}
+        \hspace{1em}
+        \subfigure{\includegraphics[width=0.05\textwidth]{images/theme/upb.png}}
+    \end{figure}
+    \vfill
+\end{frame}
+
+\begin{frame}[fragile]
+    \begin{figure}[!ht]
+        \centering
+        \tiny
+        \begin{minipage}{0.7\textwidth}
+            \begin{minted}{bash}
+            #!/bin/bash
+    
+            echo "Hello World!"
+            \end{minted}
+        \end{minipage}
+        \caption{Code Snippet}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \includegraphics[width=0.5\textwidth, center]{images/theme/upb.png}
+    \captionsetup{justification=centering,margin=1cm}
+    \captionof{figure}{Image}
+\end{frame}
+
+\begin{frame}
+
+    \begin{table}[]
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline
+            Column Name \#1 & Column Name \#2 \\ \hline
+            Entry           & Entry           \\ \hline
+            Entry           & Entry           \\ \hline
+            Entry           & Entry           \\ \hline
+            Entry           & Entry           \\ \hline
+            Entry           & Entry           \\ \hline
+            Entry           & Entry           \\ \hline
+            Entry           & Entry           \\ \hline
+        \end{tabular}
+        \caption{Table}
+        \label{tab:table}
+    \end{table}
+
+\end{frame}
