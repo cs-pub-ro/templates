@@ -1,0 +1,122 @@
+\ProvidesPackage{main}
+
+% Packages
+\usepackage[printonlyused,withpage]{acronym}
+\usepackage[titletoc, title]{appendix}
+\usepackage{array}
+\usepackage[romanian]{babel}
+\usepackage{biblatex}
+\usepackage{booktabs}
+\usepackage[figurename=Figure]{caption}
+\usepackage{chngcntr}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[margin=2.54cm]{geometry}
+\usepackage{glossaries}
+\usepackage{graphicx}
+\usepackage[bookmarks,unicode,hidelinks]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{lscape}
+\usepackage{minted}
+\usepackage{paralist}
+\usepackage{subfig}
+\usepackage{subfiles}
+\usepackage{textcase}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{verbatim}
+
+% Language to use
+\selectlanguage{english}
+
+\renewcommand\familydefault{\sfdefault}
+
+% Formatting chapters and (sub)*sections
+\titleformat{\chapter}{\large\bfseries\MakeUppercase}{\thechapter}{2ex}{}[\vspace*{-1.5cm}]
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+% Removing the chapter preffix from different elements
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+
+% Setting the spacing between lists' items to be 0
+\setlist{noitemsep}
+
+% Renaming other elements' captions
+\captionsetup[table]{name=Table}
+\renewcommand*\figurename{Figure}
+
+% Empty page style (no headers and gooters
+\pagestyle{empty}
+
+% Clearing the content of headers
+\lhead{}\chead{}\rhead{}
+
+% Clearing the content of footers
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+% Setting the line spacing
+\linespread{1.15}
+
+% Setting the indentation for paragraphs
+\setlength\parindent{0pt}
+
+% Setting the vertical spacing between paragraphs
+\setlength\parskip{.28cm}
+
+% Linking the bibliohraphy
+\addbibresource{configuration/bibliography.bib}
+
+% Avoiding overflows in bibliography
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+
+% Page numbering
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancypagestyle{front}{
+    \fancyfoot[C]{\small \thepage}
+}
+\pagestyle{front}
+\fancypagestyle{plain}{
+    \fancyfoot[C]{\small \thepage}
+}
+\newenvironment{frontmatter}{\pagenumbering{roman}}{\newpage \pagenumbering{arabic}}
+\AtBeginDocument{\addtocontents{toc}{\protect\thispagestyle{front}}}
+\addtocontents{lof}{\protect\thispagestyle{front}}
+
+% Creating a spacing configuration for header elements
+\newcommand{\HeaderLineSpace}{-0.25cm}
+
+% Glossaries
+\makeglossaries
+
+% Details that can be configured
+\newcommand{\detailabstractromanian}{}
+\newcommand{\detailabstractenglish}{}
+\newcommand{\detailtitle}{}
+\newcommand{\detailsubtitle}{}
+\newcommand{\detailstudentname}{}
+\newcommand{\detailadvisor}{}
+\newcommand{\detailsecondaryadvisor}{}
+\newcommand{\detailyear}{}
+\newcommand{\detailacknowledgements}{}
+
+% Commands used to set the above details
+\newcommand{\setdetailtitle}[1]{\renewcommand{\detailtitle}{#1}}
+\newcommand{\setdetailsubtitle}[1]{\renewcommand{\detailsubtitle}{#1}}
+\newcommand{\setdetailstudentname}[1]{\renewcommand{\detailstudentname}{#1}}
+\newcommand{\setdetailadvisor}[1]{\renewcommand{\detailadvisor}{#1}}
+\newcommand{\setdetailsecondaryadvisor}[1]{\renewcommand{\detailsecondaryadvisor}{#1}}
+\newcommand{\setdetailyear}[1]{\renewcommand{\detailyear}{#1}}
+\newcommand{\setdetailabstractromanian}[1]{\renewcommand{\detailabstractromanian}{#1}}
+\newcommand{\setdetailabstractenglish}[1]{\renewcommand{\detailabstractenglish}{#1}}
+\newcommand{\setdetailacknowledgements}[1]{\renewcommand{\detailacknowledgements}{#1}}
+
+\include{configuration/details}
+\include{configuration/whole_words}

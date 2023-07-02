@@ -1,0 +1,81 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+
+\begin{document}
+
+\hypertarget{chapter}{
+    \chapter{Examples}
+    \label{chapter}
+}
+
+This line cites the chapter \ref{chapter} and two resources mentioned in the
+bibliography \cite{article} \cite{website}.
+
+In addition, it can have the acronym reference \ac{UPB} and the concept
+"\gls{thesis}", which appears in the glossary.
+
+This is an ordered list.
+
+\begin{enumerate}
+    \item Item
+    \item Item
+    \item Item
+\end{enumerate}
+
+This is an unordered list.
+
+\begin{itemize}
+    \item Item
+    \item Item
+    \item Item
+\end{itemize}
+
+\newpage
+
+This line has some inline code, \texttt{import pandas}, and continues with a
+fully-fledged code snippet:
+
+\begin{figure}[!ht]
+    \centering
+    \begin{minted}{bash}
+        #!/bin/bash
+        
+        echo "Hello World!"
+    \end{minted}
+    \caption{Code Snippet}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[height=0.5\textheight]{images/theme/upb.png}
+    \caption{Regular Image}
+    \label{fig:landscape_image}
+\end{figure}
+
+\begin{table}[]
+    \centering
+    \begin{tabular}{|l|l|}
+        \hline
+        Column Name \#1 & Column Name \#2 \\ \hline
+        Entry           & Entry           \\ \hline
+        Entry           & Entry           \\ \hline
+        Entry           & Entry           \\ \hline
+        Entry           & Entry           \\ \hline
+        Entry           & Entry           \\ \hline
+        Entry           & Entry           \\ \hline
+        Entry           & Entry           \\ \hline
+    \end{tabular}
+    \caption{Table}
+    \label{tab:table}
+\end{table}
+
+\begin{landscape}
+    \begin{figure}[!h]
+        \centering
+        \includegraphics[height=0.95\textheight]{images/theme/upb.png}
+        \caption{Full-Page Landscape Image}
+        \label{fig:landscape_image}
+    \end{figure}
+\end{landscape}
+
+\end{document}
