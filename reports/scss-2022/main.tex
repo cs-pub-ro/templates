@@ -8,6 +8,7 @@
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage{authblk}
+\usepackage[font=small]{caption}
 
 % for text size requirements
 \makeatletter
@@ -16,12 +17,12 @@
 % section size requirements
 \sectionfont{\fontsize{14}{14}\selectfont}
 % title size requirements
-\titleformat{\title}[display]{\fontsize{14pt}{14pt}\bfseries}{}{12pt}{}
+\titleformat{\title}[display]{\fontsize{14pt}{14pt}\bfseries}{}{}{}
 
 % abstract
 \renewenvironment{abstract}{%
 \begin{center}%
-    \small \textbf{\abstractname} \it
+    \fontsize{11}{11}\selectfont \textbf{\abstractname} \it
 }
 {
 \end{center}%
@@ -30,14 +31,15 @@
 \newenvironment{keywords}
 {\textbf{Keywords--}}
 
-\title{\textbf{Template SCSS 2022 UPB}}
+\title{\textbf{Template SCSS}}
 \author[1]{Author1}
 \author[1]{Author2}
 \author[1]{Coordinator\vspace*{-0.4cm}} % last author must be the coordinator
 
 \affil[ ]{\textit{email1@xyz.edu, email2@xyz.edu, email3@xyz.edu}}
-\affil[1]{Faculty of Automatic Control and Computer Science, University Politehnica of Bucharest}
-\date{April 2022}
+\affil[1]{Faculty of Automatic Control and Computer Science, National
+University of Science and Technology Politehnica Bucharest}
+\date{May 2024}
 
 \singlespacing % single line spacing
 
